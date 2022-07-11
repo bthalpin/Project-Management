@@ -1,10 +1,24 @@
 const router = require('express').Router();
-// const jobRoutes = require('./jobRoutes');
-// const jobPostData = require('./jobPostData');
-// const companyRoutes = require('./companyRoutes');
+const {
+//   getTaskGroups,
+//   getSingleTaskGroup,
+  createTaskGroup,
+  updateTaskGroup,
+  deleteTaskGroup,
+} = require('../../controllers/taskGroupControllers.js');
+const {loginRequired} = require('../../utils/auth');
+// /api/TaskGroups
+// router.route('/').get(loginRequired,getTaskGroups).post(createTaskGroup);
+router.route('/').post(createTaskGroup);
 
-// router.use('/jobs', jobRoutes);
-// router.use('/company', companyRoutes);
-// router.use('/job/description',jobPostData)
+// /api/TaskGroups/:TaskGroupId
+router
+  .route('/:TaskGroupId')
+//   .get(loginRequired,getSingleTaskGroup)
+//   .put(updateTaskGroup)
+//   .delete(loginRequired,deleteTaskGroup);
+//   .get(getSingleTaskGroup)
+  .put(updateTaskGroup)
+  .delete(deleteTaskGroup);
 
 module.exports = router;
