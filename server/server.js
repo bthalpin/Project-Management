@@ -14,7 +14,7 @@ if (process.env.PORT){
     }
 } else {
     corsOptions = {
-        origin: ['http://localhost:19006','http://localhost:3000','http://192.168.1.38:19000'],
+        origin: 'http://localhost:3000',
         optionsSuccessStatus: 200
     }
 
