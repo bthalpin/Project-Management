@@ -16,10 +16,9 @@ const projectSchema = new Schema({
         ref: 'User'
     }
 ],
-    tasks:[
+    tasksCategory:[
         {
-        type: Schema.Types.ObjectId,
-        ref: 'Task'
+        type: String,
     }
 ],
 });

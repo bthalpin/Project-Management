@@ -1,10 +1,24 @@
 const router = require('express').Router();
-// const jobRoutes = require('./jobRoutes');
-// const jobPostData = require('./jobPostData');
-// const companyRoutes = require('./companyRoutes');
+const {
+  getMessages,
+  getSingleMessage,
+  createMessage,
+  updateMessage,
+  deleteMessage,
+} = require('../../controllers/messageControllers.js');
+// const {loginRequired} = require('../../utils/auth');
+// /api/Messages
+// router.route('/').get(loginRequired,getMessages).post(createMessage);
+router.route('/').get(getMessages).post(createMessage);
 
-// router.use('/jobs', jobRoutes);
-// router.use('/company', companyRoutes);
-// router.use('/job/description',jobPostData)
+// /api/Messages/:MessageId
+router
+  .route('/:MessageId')
+//   .get(loginRequired,getSingleMessage)
+//   .put(updateMessage)
+//   .delete(loginRequired,deleteMessage);
+  .get(getSingleMessage)
+  .put(updateMessage)
+  .delete(deleteMessage);
 
 module.exports = router;

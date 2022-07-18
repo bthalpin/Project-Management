@@ -22,11 +22,14 @@ const taskSchema = new Schema({
         ref: 'User'
         }
     ],
-    tasksGroupId:
+    category:
         {
-        type: Schema.Types.ObjectId,
-        ref: 'TaskGroup'
+        type: String,
     },
+    projectId:{
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+    }
 });
 
 const Task = mongoose.model('Task', taskSchema);
